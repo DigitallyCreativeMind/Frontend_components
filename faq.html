@@ -10,13 +10,17 @@
             background-color:rgb(198, 192, 204);
         }
         .tab-label {
-           background-color: rgb(238, 216, 20); 
+           background-color: rgb(136, 194, 248);
+           cursor: pointer; 
+        }
+        .tab-label:hover{
+            background-color: rgb(61, 155, 243);
         }
         .tabcontent {
-            background-color: rgb(136, 194, 248);
+            background-color: rgb(248, 248, 248);
             max-height: 0px;
             overflow: hidden;
-            padding:  0 1em;
+            padding: 0 1em;
             transition: all 0.4s;
         }
         input{
@@ -42,10 +46,14 @@
         input:checked ~ label .tab-label::after {
             transform:rotate(90deg);
         }
+        input:checked ~ label .tab-label{
+            background-color: rgb(61, 155, 243);
+        }
         .tab {
             border-radius: 10px;
             overflow: hidden;
             transition: all 0.4s;
+            margin-bottom: 1px;
         }
 
     </style>
@@ -54,6 +62,26 @@
   <div class="tab">
    <input type="checkbox" id = "tab-1"> 
     <label for="tab-1">
+        <div class = "tab-label">tab 1</div>
+    </label>
+ 
+  <div class="tabcontent">
+   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, molestias! Pariatur explicabo earum sunt ducimus, obcaecati laudantium. Eligendi voluptas pariatur, ad temporibus doloribus iure quibusdam facere quae nostrum! Eveniet, culpa!
+</div>
+</div> 
+  <div class="tab">
+   <input type="checkbox" id = "tab-2"> 
+    <label for="tab-2">
+        <div class = "tab-label">tab 1</div>
+    </label>
+ 
+  <div class="tabcontent">
+   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, molestias! Pariatur explicabo earum sunt ducimus, obcaecati laudantium. Eligendi voluptas pariatur, ad temporibus doloribus iure quibusdam facere quae nostrum! Eveniet, culpa!
+</div>
+</div> 
+  <div class="tab">
+   <input type="checkbox" id = "tab-3"> 
+    <label for="tab-3">
         <div class = "tab-label">tab 1</div>
     </label>
  
