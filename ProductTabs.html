@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 0.5em;
+        }
+ul {
+    list-style-type: none;
+    margin: 1em 0;
+    padding: 0;
+}
+.tabcontent.active {
+    display: block;
+    text-align: justify;
+    min-height: 12em;
+    border: 0.5px solid rgb(196, 196, 196);
+    padding: 1em;
+}
+.tabcontent {
+    display: none;
+}
+.tab.active {
+padding: 0.5em;
+border-bottom: 1px solid blueviolet;
+}
+.tab {
+padding: 0.5em;
+}
+ul > li {
+    display: inline-block;
+    margin-right: 20px;
+}
+table {
+    padding: 1em;
+    border: 1px solid blue;
+    margin-top: 0.5em;
+}
+table *{
+    border: 1px solid blue;
+}
+tr * {
+    padding: 0.5em
+}
+
+    </style>
+</head>
+<body>
+    <div class = "tabs">
+    <ul>     
+        <li class="tab active" data-tab-content = "tabContent-1">Description</li>
+        <li class="tab" data-tab-content = "tabContent-2">Information</li>
+        <li class="tab" data-tab-content = "tabContent-3">Shipping</li>
+    </ul>
+    <div id = "tabContent-1" class="tabcontent active">Description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero et, tempore corrupti recusandae necessitatibus, quidem natus unde repudiandae facere qui, esse animi eos perspiciatis corporis mollitia voluptatem vero! Illo, voluptas?</div>
+    <div id = "tabContent-2" class="tabcontent">
+    <table>
+        <thead>Information:</thead>
+        <tr><th>Weights</th><td>100g</td><td>200g</td></tr>
+        <tr><th>Sizes</th><td>XXL</td><td>XL</td></tr>
+        <tr><th>Colors</th><td>Green</td><td>Yellow</td></tr>
+    </table>
+    </div>
+    <div id = "tabContent-3" class="tabcontent">
+     <img src="freeshipping.png" alt = "Free Shipping Text">    
+    </div>
+</div>
+
+<script>
+tabs = document.querySelectorAll('.tab');
+contents = document.querySelectorAll('.tabcontent');
+tabs.forEach(tab => {
+    tab.addEventListener('click', function(){
+    contents.forEach(content => {
+        content.classList.remove('active')
+    } );
+    tabs.forEach(tab => {
+        tab.classList.remove('active')
+    } );
+    this.classList.add('active')
+    const tabContent = this.dataset.tabContent;
+    document.getElementById(tabContent).classList.add('active');
+    });
+    
+});  
+</script>
+</body>
+</html>
